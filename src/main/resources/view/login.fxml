@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.LoginController"
+            prefWidth="450" prefHeight="380"
+            style="-fx-background-color: linear-gradient(to bottom right, #2d3436, #000000);">
+
+    <children>
+
+        <!-- Center Container -->
+        <VBox spacing="18" alignment="CENTER"
+              layoutX="75" layoutY="50"
+              prefWidth="300" prefHeight="280"
+              style="-fx-background-color: rgba(255,255,255,0.07);
+                     -fx-padding: 25;
+                     -fx-background-radius: 12;">
+
+            <!-- Title -->
+            <Label alignment="CENTER"
+                   text="Book Rental System"
+                   style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+            <!-- Username -->
+            <JFXTextField fx:id="txtUsername"
+                          promptText="Username"
+                          labelFloat="true"
+                          style="-fx-text-fill: white; -jfx-focus-color: #6c5ce7; -jfx-unfocus-color: white;"/>
+
+            <!-- Password -->
+            <JFXPasswordField fx:id="txtPassword"
+                              promptText="Password"
+                              labelFloat="true"
+                              style="-fx-text-fill: white; -jfx-focus-color: #fd79a8; -jfx-unfocus-color: white;"/>
+
+            <!-- Error Message -->
+            <Label fx:id="lblMessage"
+                   textFill="#ff7675"
+                   style="-fx-font-size: 13px; -fx-padding: 3 0 0 0;" />
+
+            <!-- Login Button -->
+            <JFXButton fx:id="btnLogin"
+                       text="Login"
+                       onAction="#onLogin"
+                       style="-fx-background-color: #6c5ce7;
+                              -fx-text-fill: white;
+                              -fx-font-size: 15px;
+                              -fx-pref-width: 200;
+                              -fx-background-radius: 8;"
+            />
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

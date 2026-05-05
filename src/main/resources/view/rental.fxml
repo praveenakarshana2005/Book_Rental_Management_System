@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/24.0.1"
+            fx:controller="controllers.RentalController"
+            prefWidth="1000" prefHeight="650"
+            style="-fx-background-color: linear-gradient(to bottom right, #2d3436, #000000);">
+
+    <children>
+
+        <!-- MAIN CARD -->
+        <VBox layoutX="40" layoutY="30" spacing="20"
+              prefWidth="920" prefHeight="590"
+              style="-fx-background-color: rgba(255,255,255,0.07);
+                     -fx-background-radius: 20;
+                     -fx-padding: 25;
+                     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 15, 0.2, 0, 4);">
+
+            <!-- HEADER -->
+            <Label text="New Rental"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 28px;
+                          -fx-font-weight: bold;
+                          -fx-padding: 0 0 10 0;" />
+
+            <!-- CUSTOMER SELECT -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Customer:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                <ComboBox fx:id="cmbCustomer" prefWidth="300"
+                          style="-fx-background-radius: 7;" />
+                <Button text="Refresh"
+                        onAction="#onRefreshCustomers"
+                        style="-fx-background-color: #6c5ce7; -fx-text-fill: white;
+                               -fx-background-radius: 8; -fx-padding: 8 18;" />
+            </HBox>
+
+            <!-- BOOK SELECT ROW -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Book:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;" />
+
+                <ComboBox fx:id="cmbBook" prefWidth="250"
+                          style="-fx-background-radius: 7;" />
+
+                <TextField fx:id="txtQty" prefWidth="70" promptText="Qty"
+                           style="-fx-background-radius: 7;" />
+
+                <TextField fx:id="txtFine" prefWidth="100" promptText="Fine/Day"
+                           style="-fx-background-radius: 7;" />
+
+                <Button text="Add Book"
+                        onAction="#onAddItem"
+                        style="-fx-background-color: #00cec9; -fx-text-fill: white;
+                               -fx-background-radius: 8; -fx-padding: 8 18;" />
+            </HBox>
+
+            <!-- TABLE -->
+            <TableView fx:id="tableItems" prefHeight="300"
+                       style="-fx-background-color: rgba(255,255,255,0.05);
+                              -fx-background-radius: 15;
+                              -fx-padding: 10;">
+                <columns>
+                    <TableColumn fx:id="colTitle" text="Title" prefWidth="260"/>
+                    <TableColumn fx:id="colQty" text="Qty" prefWidth="80"/>
+                    <TableColumn fx:id="colFine" text="Fine/Day" prefWidth="100"/>
+                    <TableColumn fx:id="colRemove" text="Action" prefWidth="100"/>
+                </columns>
+            </TableView>
+
+            <!-- ISSSUE SECTION -->
+            <HBox spacing="20" alignment="CENTER_LEFT">
+                <Label text="Days:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;" />
+
+                <TextField fx:id="txtDays" prefWidth="80" promptText="Duration"
+                           style="-fx-background-radius: 7;" />
+
+                <Button text="Issue Rental" prefWidth="200"
+                        onAction="#onIssueRental"
+                        style="-fx-background-color: #0984e3; -fx-text-fill: white;
+                               -fx-background-radius: 8; -fx-padding: 10 25;" />
+            </HBox>
+
+        </VBox>
+
+    </children>
+
+</AnchorPane>

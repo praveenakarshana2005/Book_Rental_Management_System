@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/24.0.1"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.DashboardController"
+            prefWidth="900" prefHeight="550"
+            style="-fx-background-color: linear-gradient(to bottom right, #2d3436, #000000);">
+
+    <children>
+
+        <!-- LEFT SIDEBAR MENU -->
+        <VBox alignment="TOP_CENTER" spacing="25"
+              prefWidth="250" prefHeight="550"
+              style="-fx-background-color: rgba(255,255,255,0.08);
+                     -fx-background-radius: 0 20 20 0;
+                     -fx-padding: 30 10 10 10;">
+
+            <!-- Welcome Label -->
+            <Label fx:id="lblWelcome"
+                   wrapText="true"
+                   style="-fx-text-fill: white;
+                          -fx-font-size: 18px;
+                          -fx-font-weight: bold;
+                          -fx-padding: 0 0 20 0;" />
+
+
+
+            <Button text="📝   New Rental"
+                    onAction="#onOpenRental"
+                    prefWidth="200"
+                    style="-fx-background-color: #fdcb6e;
+                           -fx-text-fill: #2d3436;
+                           -fx-font-size: 15px;
+                           -fx-background-radius: 10;" />
+
+            <Button text="🔄   Returns"
+                    onAction="#onOpenReturns"
+                    prefWidth="200"
+                    style="-fx-background-color: #00b894;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-background-radius: 10;" />
+
+            <Button text="📊   Reports"
+                    onAction="#onOpenReports"
+                    prefWidth="200"
+                    style="-fx-background-color: #0984e3;
+                           -fx-text-fill: white;
+                           -fx-font-size: 15px;
+                           -fx-background-radius: 10;" />
+        </VBox>
+
+
+
+
+    </children>
+
+</AnchorPane>
